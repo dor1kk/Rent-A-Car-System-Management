@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { FaHome, FaCar, FaTicketAlt, FaUserFriends, FaChartBar, FaClock } from 'react-icons/fa';
+import { FaHome, FaCar, FaTicketAlt, FaUserFriends, FaChartBar, FaClock, FaCalendar } from 'react-icons/fa';
 import { CiSettings } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import { FaMessage } from 'react-icons/fa6';
 
 const Sidebar = () => {
   const [activeItem, setActiveItem] = useState('');
@@ -14,8 +15,10 @@ const Sidebar = () => {
     { name: 'Dashboard', icon: <FaHome />, path: '/dashboard' },
     { name: 'Cars', icon: <FaCar />, path: '/cars' },
     { name: 'Bookings', icon: <FaTicketAlt />, path: '/bookings' },
-    { name: 'Customers', icon: <FaUserFriends />, path: '/customers' },
-    { name: 'Analytics', icon: <FaChartBar />, path: '/analytics' },
+    { name: 'Car Report', icon: <FaChartBar />, path: '/car-report' },
+    { name: 'Messages', icon: <FaMessage />, path: '/messages' },
+
+    { name: 'Calendar', icon: <FaCalendar />, path: '/calendar' },
     { name: 'Settings', icon: <CiSettings />, path: '/settings' },
   ];
 

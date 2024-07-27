@@ -5,6 +5,11 @@ import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import CarRentalManagement from './Cars';
 import MyBookings from './MyBookings';
+import CarReport from './CarReport';
+import { Calendar } from 'antd';
+import CalendarComponent from './Calendar';
+import Settings from './Setttings';
+import Chat from './Messages';
 
 
 const Home = () => {
@@ -20,6 +25,10 @@ const Home = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cars" element={<CarRentalManagement />} />
             <Route path="/bookings" element={<MyBookings />} />
+            <Route path="/car-report" element={<CarReport />}></Route>
+            <Route path='/calendar' element={<CalendarComponent />}></Route>
+            <Route path='/settings' element={<Settings />}></Route>
+            <Route path='/messages' element={<Chat />}></Route>
           </Routes>
         </div>
       </div>

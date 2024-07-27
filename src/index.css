@@ -24,3 +24,34 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.react-calendar {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-calendar__tile {
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.react-calendar__tile--active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.react-calendar__tile--highlighted {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+.react-calendar__month-view__days__day {
+  border-radius: 50%;
+}
+
+.highlighted {
+  background-color: #ffeb3b !important;
+  color: #333 !important;
+}
+

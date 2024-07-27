@@ -1,27 +1,159 @@
-export const statistics=[
+export const cars = [
     {
-        name:'Total Revenue',
-        number:'216k',
-        change:'341+',
-        icon:'https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-round-2/254000/102-512.png'
+      id: 1001,
+      title: 'Toyota Camry',
+      image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/camry-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80',
+      description: 'A reliable and comfortable sedan with excellent fuel efficiency.',
+      category: 'Sedan',
+      availability: ['2024-08-01', '2024-08-05', '2024-08-10'],
+      rating: 4.5,
+      price: '$30/day',
+      bookingLink: 'https://example.com/book-toyota-camry',
+      features: ['Automatic Transmission', 'Air Conditioning', 'Navigation System'],
+      status: 'available'
     },
     {
-        name:'Invoices',
-        number:'2221',
-        change:'121+',
-        icon:'https://cdn-icons-png.flaticon.com/512/7572/7572360.png'
+      id: 1002,
+      title: 'Ford Mustang',
+      image: 'https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2024/mustang/overview/colorizer/azul-estorial/fbr-colorizer-mustang-gt-azul-estoril.jpg.dam.full.high.jpg/1711376846589.jpg',
+      description: 'A powerful sports car with a sleek design and thrilling performance.',
+      category: 'Sports',
+      availability: ['2024-08-02', '2024-08-07', '2024-08-12'],
+      rating: 4.7,
+      price: '$60/day',
+      bookingLink: 'https://example.com/book-ford-mustang',
+      features: ['Manual Transmission', 'Leather Seats', 'Bluetooth'],
+      status: 'available'
     },
     {
-        name:'Clients',
-        number:'1423',
-        change:'427+',
-        icon:'https://www.vhv.rs/dpng/d/473-4736597_customer-engagement-icon-png-clipart-png-download-customer.png'
+      id: 1003,
+      title: 'Honda CR-V',
+      image: 'https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/uHxmlyLn0y4KQndhrof3S1E7GZLBoRiy4KSjeItZ.png',
+      description: 'A spacious SUV with plenty of room and advanced safety features.',
+      category: 'SUV',
+      availability: ['2024-08-03', '2024-08-08', '2024-08-13'],
+      rating: 4.8,
+      price: '$50/day',
+      bookingLink: 'https://example.com/book-honda-crv',
+      features: ['All-Wheel Drive', 'Sunroof', 'Backup Camera'],
+      status: 'available'
     },
     {
-        name:'Loyalty',
-        number:'78',
-        change:'1%',
-        icon:'https://icon-library.com/images/loyalty-icon/loyalty-icon-27.jpg'
+      id: 1004,
+      title: 'Chevrolet Bolt',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0aSkEsXFvbmsIgQfpkTj01oTcoXKUJHGJXw&s',
+      description: 'An electric vehicle with impressive range and modern features.',
+      category: 'Electric',
+      availability: ['2024-08-04', '2024-08-09', '2024-08-14'],
+      rating: 4.6,
+      price: '$40/day',
+      bookingLink: 'https://example.com/book-chevrolet-bolt',
+      features: ['Electric', 'Navigation System', 'Heated Seats'],
+      status: 'available'
     },
-    
-]
+    {
+      id: 1005,
+      title: 'Jeep Wrangler',
+      image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/174977/wrangler-facelift-right-front-three-quarter.jpeg?isig=0&q=80',
+      description: 'A rugged SUV designed for off-road adventures with strong performance.',
+      category: 'SUV',
+      availability: ['2024-08-06', '2024-08-11', '2024-08-15'],
+      rating: 4.9,
+      price: '$55/day',
+      bookingLink: 'https://example.com/book-jeep-wrangler',
+      features: ['4WD', 'Convertible Top', 'Off-Road Tires'],
+      status: 'available'
+    },
+    {
+      id: 1006,
+      title: 'BMW 3 Series',
+      image: 'https://prod.cosy.bmw.cloud/bmvis/cosySec?COSY-EU-100-2545J3qAHyFnz5cRoHSWRzMESDsVcRoH7QRzMESV59VMb3G6bUJ1rjGRPixrQbUoaFoGq0zdpbKHl38mrjGm7SErQbCUQMs2q0zRERW8J13882q0zAaFHdl382hhq0zkRNSQBL4QSW8zLAd8W8J1ExSnQNUMESQdo3uuRCqoQEdcNq0zkdHNqoQqRrjGr9oFGW8zWubDEqogqaJNQl3ilUQt9cRScH8ZAMbnMd03RyJGy5BYurQ%25r9SEUW8zWunFbqogqaGCel3ilU%25becRScHzj8MbnMdgsoyJGy5iKErQ%25r9St8W8zWunm7qogqaDjzl3ilUCzgcRScH48gMbnMdeoqyJGy5mgprQ%25r98RnW8zWuob9qogqa3Jnl3ilUR%256cRScHbR2MbnMdJCYyJGy55unrQ%25r993UW8zWuuRCqogqaaRdl3ilUUHecRScHHafMb3huCJit5W7%25mR59W8JfMESbde9uyJRObz6mrjGg8RyJR1lBgyJnH59Mb35q0z9D',
+      description: 'A luxury sedan with a perfect blend of performance and comfort.',
+      category: 'Luxury',
+      availability: ['2024-08-07', '2024-08-12', '2024-08-16'],
+      rating: 4.8,
+      price: '$70/day',
+      bookingLink: 'https://example.com/book-bmw-3-series',
+      features: ['Leather Seats', 'Navigation System', 'Adaptive Cruise Control'],
+      status: 'available'
+    },
+    {
+        id: 1007,
+        title: 'Audi A4',
+        image: 'https://crdms.images.consumerreports.org/c_lfill,w_470,q_auto,f_auto/prod/cars/cr/car-versions/3016-2017-audi-a4-premiumplus',
+        description: 'A premium sedan offering a perfect balance of comfort and performance.',
+        category: 'Luxury',
+        availability: ['2024-08-08', '2024-08-13', '2024-08-18'],
+        rating: 4.7,
+        price: '$65/day',
+        bookingLink: 'https://example.com/book-audi-a4',
+        features: ['Leather Upholstery', 'Navigation System', 'Adaptive Cruise Control'],
+        status: 'available'
+      },
+      {
+        id: 1008,
+        title: 'Subaru Outback',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcOyaD9G6FlA2VJF3qcVcyMZT7oYfZb8SADQ&s',
+        description: 'A versatile SUV with all-wheel drive and ample cargo space.',
+        category: 'SUV',
+        availability: ['2024-08-09', '2024-08-14', '2024-08-19'],
+        rating: 4.6,
+        price: '$55/day',
+        bookingLink: 'https://example.com/book-subaru-outback',
+        features: ['All-Wheel Drive', 'Sunroof', 'Blind Spot Monitoring'],
+        status: 'available'
+      },
+      {
+        id: 1009,
+        title: 'Tesla Model 3',
+        image: 'https://cdn-www.pod-point.com/model-3-21-white-background.jpg?v=1611831804',
+        description: 'An electric car with impressive range and advanced tech features.',
+        category: 'Electric',
+        availability: ['2024-08-10', '2024-08-15', '2024-08-20'],
+        rating: 4.9,
+        price: '$70/day',
+        bookingLink: 'https://example.com/book-tesla-model-3',
+        features: ['Autopilot', 'Electric', 'Touchscreen Interface'],
+        status: 'available'
+      },
+      {
+        id: 1010,
+        title: 'Mercedes-Benz C-Class',
+        image: 'https://www.mbusa.com/content/dam/mb-nafta/us/myco/my24/c-class/class-page/series/2024-C-SEDAN-CT-1-6-01-DR.jpg',
+        description: 'A luxury sedan with a refined design and cutting-edge technology.',
+        category: 'Luxury',
+        availability: ['2024-08-11', '2024-08-16', '2024-08-21'],
+        rating: 4.8,
+        price: '$75/day',
+        bookingLink: 'https://example.com/book-mercedes-c-class',
+        features: ['Premium Leather Seats', 'Advanced Safety Features', 'Navigation System'],
+        status: 'available'
+      },
+      {
+        id: 1011,
+        title: 'Volkswagen Golf',
+        image: 'https://imgcdn.zigwheels.ph/large/gallery/color/31/290/volkswagen-golf-gti-color-578537.jpg',
+        description: 'A compact hatchback known for its practicality and enjoyable driving experience.',
+        category: 'Hatchback',
+        availability: ['2024-08-12', '2024-08-17', '2024-08-22'],
+        rating: 4.4,
+        price: '$45/day',
+        bookingLink: 'https://example.com/book-volkswagen-golf',
+        features: ['Bluetooth Connectivity', 'Cruise Control', 'Sporty Design'],
+        status: 'available'
+      },
+      {
+        id: 1012,
+        title: 'Porsche 911',
+        image: 'https://cdn.motor1.com/images/mgl/Oo3xke/s3/mansory-p9lm-evo-900-porsche-911-turbo-s.jpg',
+        description: 'A high-performance sports car with iconic design and exhilarating driving dynamics.',
+        category: 'Sports',
+        availability: ['2024-08-13', '2024-08-18', '2024-08-23'],
+        rating: 4.9,
+        price: '$150/day',
+        bookingLink: 'https://example.com/book-porsche-911',
+        features: ['High-Performance Engine', 'Leather Upholstery', 'Sport Mode'],
+        status: 'available'
+      }
+  ];
+  
