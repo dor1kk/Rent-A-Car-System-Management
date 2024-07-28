@@ -1,14 +1,25 @@
-// src/Register.js
+// SignUp.js
 import React from 'react';
 import { Form, Input, Button, Typography, Checkbox } from 'antd';
-import { GoogleOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../backend/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const { Title, Text } = Typography;
 
+
 const Register = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+    const navigate = useNavigate();
+
+  const onFinish = async (values) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      console.log('Success:', userCredential.user);
+      navigate('/home');
+
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -28,22 +39,15 @@ const Register = () => {
             </div>
             <Title level={2} className="text-center italic">Create an account</Title>
             <Form
-              name="register"
+              name="basic"
               initialValues={{ remember: true }}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               layout="vertical"
             >
               <Form.Item
-                name="username"
-                rules={[{ required: true, message: 'Please input your username!' }]}
-              >
-                <Input placeholder="User Name" />
-              </Form.Item>
-
-              <Form.Item
                 name="email"
-                rules={[{ required: true, message: 'Please input your email!' }, { type: 'email', message: 'The input is not valid E-mail!' }]}
+                rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
               >
                 <Input placeholder="Email" />
               </Form.Item>
@@ -55,44 +59,18 @@ const Register = () => {
                 <Input.Password placeholder="Password" />
               </Form.Item>
 
-              <Form.Item
-                name="confirm"
-                dependencies={['password']}
-                hasFeedback
-                rules={[
-                  { required: true, message: 'Please confirm your password!' },
-                  ({ getFieldValue }) => ({
-                    validator(_, value) {
-                      if (!value || getFieldValue('password') === value) {
-                        return Promise.resolve();
-                      }
-                      return Promise.reject(new Error('The two passwords do not match!'));
-                    },
-                  }),
-                ]}
-              >
-                <Input.Password placeholder="Confirm Password" />
-              </Form.Item>
-
-              <Form.Item name="agreement" valuePropName="checked">
-                <Checkbox>
-                  I agree to the <a href="#">terms and conditions</a>
-                </Checkbox>
+              <Form.Item name="remember" valuePropName="checked">
+                <Checkbox>Remember me</Checkbox>
               </Form.Item>
 
               <Form.Item>
                 <Button type="primary" htmlType="submit" className="w-full">
-                  Register
+                  Sign Up
                 </Button>
               </Form.Item>
             </Form>
-            <div className="flex justify-center my-4">
-              <Button type="default" icon={<GoogleOutlined />} className="w-full">
-                Sign up with Google
-              </Button>
-            </div>
             <Text type="secondary" className="block text-center mt-4">
-              Already have an account? <Link to={'/sign-in'} className="text-teal-500 hover:text-teal-700">Sign in</Link>
+              Already have an account? <Link to={'/signin'} className="text-teal-500 hover:text-teal-700">Sign in</Link>
             </Text>
           </div>
         </div>

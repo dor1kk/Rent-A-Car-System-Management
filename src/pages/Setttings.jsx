@@ -1,13 +1,16 @@
 import React from 'react';
 
-const Settings = () => {
+const Settings = ({ user }) => {
+  const initial = user?.email ? user.email.charAt(0).toUpperCase() : 'U';
+
+  const placeholderImage = `https://ui-avatars.com/api/?name=${initial}&background=random&size=128`;
+
   return (
-    <div className="flex flex-col md:flex-row  h-screen p-6">
-      {/* Profile Section */}
+    <div className="flex flex-col md:flex-row h-screen p-6">
       <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md">
         <div className="flex flex-col items-center">
           <img
-            src="https://via.placeholder.com/150"
+            src={placeholderImage}
             alt="Profile"
             className="rounded-full w-32 h-32 object-cover"
           />
@@ -16,8 +19,8 @@ const Settings = () => {
           </button>
         </div>
         <div className="mt-6 text-center">
-          <h2 className="text-xl font-semibold">Mason Wilson</h2>
-          <p className="text-gray-600">Admin</p>
+          <h2 className="text-xl font-semibold">{user?.email || "User Name"}</h2>
+          <p className="text-gray-600">{user?.role || "User"}</p>
         </div>
         <div className="mt-6">
           <h3 className="text-lg font-semibold">Notifications</h3>
@@ -33,7 +36,6 @@ const Settings = () => {
         </div>
       </div>
       
-      {/* Profile Information */}
       <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md mt-6 md:mt-0 md:ml-6">
         <div className="mb-6">
           <h3 className="text-lg font-semibold">Profile Information</h3>
@@ -51,7 +53,8 @@ const Settings = () => {
               <label className="mb-2 text-sm font-medium text-gray-700">First Name</label>
               <input
                 type="text"
-                placeholder="Mason"
+                value={user?.firstName || ""}
+                placeholder="First Name"
                 className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -59,7 +62,8 @@ const Settings = () => {
               <label className="mb-2 text-sm font-medium text-gray-700">Last Name</label>
               <input
                 type="text"
-                placeholder="Wilson"
+                value={user?.lastName || ""}
+                placeholder="Last Name"
                 className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -67,7 +71,8 @@ const Settings = () => {
               <label className="mb-2 text-sm font-medium text-gray-700">Email Address</label>
               <input
                 type="email"
-                placeholder="masonwilson123@gmail.com"
+                value={user?.email || ""}
+                placeholder="Email Address"
                 className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -75,7 +80,8 @@ const Settings = () => {
               <label className="mb-2 text-sm font-medium text-gray-700">Phone Number</label>
               <input
                 type="tel"
-                placeholder="+1 (555) 000-0000"
+                value={user?.phoneNumber || ""}
+                placeholder="Phone Number"
                 className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
