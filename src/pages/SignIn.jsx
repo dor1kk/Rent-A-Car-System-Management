@@ -15,7 +15,7 @@ const SignIn = ({ setUser }) => {
       const userCredential = await signInWithEmailAndPassword(auth, values.username, values.password);
       setUser(userCredential.user);
       console.log(userCredential.user);
-      navigate('/home');
+      navigate('/dashboard');
     } catch (error) {
       console.error('Error signing in with password:', error);
     }

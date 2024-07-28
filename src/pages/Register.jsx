@@ -15,7 +15,7 @@ const Register = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
       console.log('Success:', userCredential.user);
-      navigate('/home');
+      navigate('/dashboard');
 
     } catch (error) {
       console.error('Error signing up:', error);
