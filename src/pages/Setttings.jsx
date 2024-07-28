@@ -7,7 +7,7 @@ const Settings = ({ user }) => {
 
   return (
     <div className="flex flex-col md:flex-row h-screen p-6">
-      <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md">
+      <div className="w-full md:w-1/3 lg:w-1/4 bg-white p-6 rounded-lg shadow-md">
         <div className="flex flex-col items-center">
           <img
             src={placeholderImage}
@@ -36,14 +36,13 @@ const Settings = ({ user }) => {
         </div>
       </div>
       
-      <div className="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md mt-6 md:mt-0 md:ml-6">
+      <div className="w-full md:w-2/3 lg:w-3/4 bg-white p-6 rounded-lg shadow-md mt-6 md:mt-0 md:ml-6">
         <div className="mb-6">
           <h3 className="text-lg font-semibold">Profile Information</h3>
           <div className="border-b border-gray-200">
             <nav className="-mb-px flex space-x-8">
               <a className="text-indigo-600 border-indigo-600 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" href="#">Profile Settings</a>
-              <a className="text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" href="#">Drivers Settings</a>
-              <a className="text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" href="#">Payment Methods</a>
+
             </nav>
           </div>
         </div>

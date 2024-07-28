@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FaHome, FaCar, FaTicketAlt, FaUserFriends, FaChartBar, FaClock, FaCalendar } from 'react-icons/fa';
+import { FaHome, FaCar, FaTicketAlt, FaChartBar, FaCalendar } from 'react-icons/fa';
 import { CiSettings } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { FaMessage } from 'react-icons/fa6';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [activeItem, setActiveItem] = useState('');
 
   const handleItemClick = (item) => {
@@ -17,13 +17,12 @@ const Sidebar = () => {
     { name: 'Bookings', icon: <FaTicketAlt />, path: '/bookings' },
     { name: 'Car Report', icon: <FaChartBar />, path: '/car-report' },
     { name: 'Messages', icon: <FaMessage />, path: '/messages' },
-
     { name: 'Calendar', icon: <FaCalendar />, path: '/calendar' },
     { name: 'Settings', icon: <CiSettings />, path: '/settings' },
   ];
 
   return (
-    <div className="bg-blue-500 w-16 flex flex-col items-center py-4 h-full">
+    <div className={`bg-blue-500 h-full transition-transform duration-300  md:translate-x-0 md:w-16 flex flex-col items-center py-4`}>
       <div className="mb-16">
         <img
           src="https://seeklogo.com/images/A/azure-synapse-analytics-logo-B87A556A9C-seeklogo.com.png"

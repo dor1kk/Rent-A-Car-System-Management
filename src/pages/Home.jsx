@@ -12,17 +12,22 @@ import Chat from './Messages';
 
 const Home = ({ user }) => {
   const [search, setSearch] = useState('');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <div className="flex flex-col w-full">
-        <Navbar search={search} setSearch={setSearch} user={user} />
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar  />
+      <div className="flex flex-col w-full md:pl-16">
+        <Navbar search={search} setSearch={setSearch} user={user} toggleSidebar={toggleSidebar} />
         <div className="flex-1 overflow-auto">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/cars" element={<CarRentalManagement />} />
-            <Route path="/bookings" element={<MyBookings />} />
+            <Route path="/cars" element={<CarRentalManagement user={user} />} />
+            <Route path="/bookings" element={<MyBookings user={user} />} />
             <Route path="/car-report" element={<CarReport />} />
             <Route path='/calendar' element={<CalendarComponent />} />
             <Route path='/settings' element={<Settings user={user} />} />
