@@ -1,5 +1,5 @@
 import React from 'react';
-import UserList from './UserList';
+import UserList from './Chat/UserList';
 
 const ChatSidebar = ({ users, selectedChat, onChatClick }) => (
     <div className="w-full md:w-1/5 border-r border-gray-300">

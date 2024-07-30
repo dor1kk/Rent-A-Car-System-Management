@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from 'react-avatar';
-import { UserAvatar } from '../../components/UserAvatar';
+import { UserAvatar } from '../../components/Chat/UserAvatar';
 
 const UserList = ({ users, selectedChat, onChatClick }) => {
     return (

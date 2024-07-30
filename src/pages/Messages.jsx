@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { firestore } from '../../backend/firebaseConfig';
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp, getDocs } from 'firebase/firestore';
-import ChatSidebar from '../sections/Chat/ChatSidebar';
-import ChatHeader from '../sections/Chat/ChatHeader';
+import ChatSidebar from '../sections/ChatSidebar';
+import ChatHeader from '../sections/ChatHeader';
 import ChatInfo from '../sections/Chat/ChatInfo';
 import MessageList from '../sections/Chat/MessageList';
 
