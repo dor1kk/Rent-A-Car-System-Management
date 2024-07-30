@@ -2,8 +2,9 @@ import React from 'react';
 import { Form, Input, Button, Typography, Checkbox } from 'antd';
 import { GoogleOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, googleProvider } from '../../backend/firebaseConfig';
+import { auth, googleProvider, firestore } from '../../backend/firebaseConfig';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 const { Title, Text } = Typography;
 
@@ -13,8 +14,17 @@ const SignIn = ({ setUser }) => {
   const onFinish = async (values) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, values.username, values.password);
-      setUser(userCredential.user);
-      console.log(userCredential.user);
+      const user = userCredential.user;
+
+      // Add user information to Firestore
+      await setDoc(doc(firestore, 'users', user.uid), {
+        email: user.email,
+        displayName: user.displayName || user.email,
+        lastLogin: new Date(),
+      });
+
+      setUser(user);
+      console.log(user);
       navigate('/dashboard');
     } catch (error) {
       console.error('Error signing in with password:', error);
@@ -28,8 +38,17 @@ const SignIn = ({ setUser }) => {
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
-      setUser(result.user);
-      navigate('/home');
+      const user = result.user;
+
+      // Add user information to Firestore
+      await setDoc(doc(firestore, 'users', user.uid), {
+        email: user.email,
+        displayName: user.displayName || user.email,
+        lastLogin: new Date(),
+      });
+
+      setUser(user);
+      navigate('/dashboard');
     } catch (error) {
       console.error('Error signing in with Google:', error);
     }

@@ -73,9 +73,9 @@ const CarRentalManagement = ({ user }) => {
   };
 
   return (
-    <div className="lg:flex lg:h-full">
+    <div className="lg:flex lg:h-full p-8 md:px-8">
       <ToastContainer />
-      <div className="lg:flex-1 p-4 overflow-auto">
+      <div className="lg:flex-1 overflow-auto">
         <h2 className="text-lg font-bold mb-4">Filter by Category</h2>
         <div className="flex flex-wrap gap-2 mb-4">
           {uniqueCategories.map((category) => (

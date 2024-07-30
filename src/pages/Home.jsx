@@ -20,18 +20,18 @@ const Home = ({ user }) => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      <Sidebar  />
-      <div className="flex flex-col w-full md:pl-16">
+      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className={`flex flex-col flex-1 transition-all duration-300 md:ml-16`}>
         <Navbar search={search} setSearch={setSearch} user={user} toggleSidebar={toggleSidebar} />
-        <div className="flex-1 overflow-auto">
+        <div className="overflow-auto flex-1">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/cars" element={<CarRentalManagement user={user} />} />
             <Route path="/bookings" element={<MyBookings user={user} />} />
             <Route path="/car-report" element={<CarReport />} />
-            <Route path='/calendar' element={<CalendarComponent />} />
-            <Route path='/settings' element={<Settings user={user} />} />
-            <Route path='/messages' element={<Chat />} />
+            <Route path="/calendar" element={<CalendarComponent />} />
+            <Route path="/settings" element={<Settings user={user} />} />
+            <Route path="/messages" element={<Chat user={user} />} />
           </Routes>
         </div>
       </div>

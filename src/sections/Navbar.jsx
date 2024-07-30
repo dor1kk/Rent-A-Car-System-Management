@@ -76,12 +76,16 @@ const Navbar = ({ search, setSearch, user, toggleSidebar }) => {
     }
   };
 
- 
-
   return (
     <div className="relative">
       <div className="flex flex-row justify-between px-4 md:px-16 py-4">
         <div className="flex items-center gap-4 relative">
+          <button
+            onClick={toggleSidebar}
+            className="text-blue-500 md:hidden focus:outline-none"
+          >
+            ☰
+          </button>
           <IoIosSearch />
           <input
             type="text"
@@ -159,10 +163,10 @@ const Navbar = ({ search, setSearch, user, toggleSidebar }) => {
             </Menu>
           ) : (
             <div className="flex items-center gap-4">
-              <Link to="/sign-in" className="text-white bg-blue-300 hover:underline">
+              <Link to="/sign-in" className="flex items-center text-white bg-blue-500 px-8 py-2 rounded-lg whitespace-nowrap">
                 Sign In
               </Link>
-              <Link to="/register" className="text-blue-600 hover:underline">
+              <Link to="/register" className="hidden sm:flex items-center text-blue-600 px-4 py-2 whitespace-nowrap">
                 Register
               </Link>
             </div>
