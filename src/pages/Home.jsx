@@ -9,6 +9,8 @@ import CarReport from './CarReport';
 import CalendarComponent from './Calendar';
 import Settings from './Setttings';
 import Chat from './Messages';
+import Blog from './Blog';
+
 
 const Home = ({ user }) => {
   const [search, setSearch] = useState('');
@@ -32,6 +34,8 @@ const Home = ({ user }) => {
             <Route path="/calendar" element={<CalendarComponent />} />
             <Route path="/settings" element={<Settings user={user} />} />
             <Route path="/messages" element={<Chat user={user} />} />
+            <Route path="/blog" element={<Blog />} />
+
           </Routes>
         </div>
       </div>

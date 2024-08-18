@@ -3,6 +3,7 @@ import Avatar from 'react-avatar';
 
 const ChatHeader = ({ chatPartner }) => (
     <div className="flex justify-between items-center mb-4">
+        
         <h2 className="text-lg md:text-xl font-semibold">
             {chatPartner ? `Chat with ${chatPartner.displayName}` : 'Select a chat'}
         </h2>

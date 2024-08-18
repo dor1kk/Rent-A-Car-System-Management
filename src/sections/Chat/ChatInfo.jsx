@@ -11,7 +11,7 @@ const ChatInfo = ({ chatPartner }) => (
                 className="object-cover"
             />
             <h2 className="mt-2 md:mt-4 text-lg md:text-xl font-semibold">
-                {chatPartner ? `Chat with ${chatPartner.displayName}` : 'Select a chat'}
+                {chatPartner ? `${chatPartner.displayName}` : 'Select a chat'}
             </h2>
             <p className="text-gray-600 text-sm md:text-base">
                 {chatPartner ? `${chatPartner.role} at ${chatPartner.company}` : 'Select a chat to start'}

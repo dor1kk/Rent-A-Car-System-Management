@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHome, FaCar, FaTicketAlt, FaChartBar, FaCalendar } from 'react-icons/fa';
+import { FaHome, FaCar, FaTicketAlt, FaChartBar, FaCalendar, FaImage } from 'react-icons/fa';
 import { CiSettings } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { FaMessage } from 'react-icons/fa6';
@@ -9,14 +9,15 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    toggleSidebar(); // Close sidebar after clicking a link
+    toggleSidebar(); 
   };
 
   const listItems = [
-    { name: 'Dashboard', icon: <FaHome />, path: '/dashboard' },
+    { name: 'Dashboard', icon: <FaHome />, path: '/' },
     { name: 'Cars', icon: <FaCar />, path: '/cars' },
     { name: 'Bookings', icon: <FaTicketAlt />, path: '/bookings' },
     { name: 'Car Report', icon: <FaChartBar />, path: '/car-report' },
+    { name: 'Blog', icon: <FaImage />, path: '/blog' },
     { name: 'Messages', icon: <FaMessage />, path: '/messages' },
     { name: 'Calendar', icon: <FaCalendar />, path: '/calendar' },
     { name: 'Settings', icon: <CiSettings />, path: '/settings' },

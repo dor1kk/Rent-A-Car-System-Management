@@ -78,7 +78,7 @@ const Chat = ({ user }) => {
     return (
         <div className="flex flex-col md:flex-row h-[90vh]">
                         <ChatSidebar users={users} selectedChat={selectedChat} onChatClick={handleChatClick} />
-            <div className="flex flex-1 flex-col md:flex-row p-4 bg-gray-100">
+            <div className="flex flex-1 flex-col md:flex-row p-4 bg-gray-50">
                 <div className="flex-1 flex flex-col">
                     <ChatHeader chatPartner={chatPartner} />
                     <MessageList messages={messages} user={user} />
